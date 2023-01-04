@@ -1,6 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="ru">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +10,7 @@
     <link rel="icon" type="image/png" href="{% static 'todo/melon_logo.png' %}">
     <title>Melon Time</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-warning">
         <div class="container">
@@ -32,6 +34,9 @@
                     </li>
                     <li class="nav-item {{ create }}">
                         <a class="nav-link" href="{% url 'createtodo' %}">Создать</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="https://github.com/DanielKnaub">Github</a>
                     </li>
                 </ul>
                 {% endif %}
@@ -69,4 +74,5 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
