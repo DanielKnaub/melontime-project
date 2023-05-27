@@ -1,8 +1,9 @@
 {% extends "todo/base.html" %}
 {% block content %}
+{% load i18n %}
 <div class="row justify-content-center mt-5">
     <div class="col-md-5">
-        <h2>Новая задача</h2>
+        <h2>{% trans "New Todo" %}</h2>
     </div>
 </div>
 <div class="row justify-content-center mt-5">
@@ -15,7 +16,7 @@
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
-                <label for="title">Название</label>
+                <label for="title">{% trans "Title" %}</label>
                 <input type="text" name="title" class="form-control" id="title" required>
             </div>
             <div class="form-group">
@@ -24,9 +25,9 @@
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" name="important" class="form-check-input" id="important">
-                <label class="form-check-label" for="important">Важная задача</label>
+                <label class="form-check-label" for="important">{% trans "Description" %}</label>
             </div>
-            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
         </form>
     </div>
 </div>

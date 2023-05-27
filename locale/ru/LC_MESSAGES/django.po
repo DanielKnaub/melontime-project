@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-27 11:12+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: melontime/settings.py:119
+msgid "Russian"
+msgstr "Русский"
+
+#: melontime/settings.py:120
+msgid "English"
+msgstr "English"
+
+#: todo/templates/todo/base.html:45 todo/templates/todo/currenttodos.html:13
+msgid "Current Todos"
+msgstr "Текущие задачи"
+
+#: todo/templates/todo/base.html:48 todo/templates/todo/completedtodos.html:6
+msgid "Completed Todos"
+msgstr "Завершённые задачи"
+
+#: todo/templates/todo/base.html:51
+msgid "Create Todo"
+msgstr "Создать задачу"
+
+#: todo/templates/todo/base.html:61 todo/templates/todo/base.html:64
+msgid "Logout"
+msgstr "Выйти"
+
+#: todo/templates/todo/base.html:69 todo/templates/todo/signupuser.html:31
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: todo/templates/todo/base.html:72 todo/templates/todo/loginuser.html:6
+#: todo/templates/todo/loginuser.html:26
+msgid "Login"
+msgstr "Войти"
+
+#: todo/templates/todo/createtodo.html:6
+#: todo/templates/todo/currenttodos.html:29 todo/templates/todo/viewtodo.html:6
+msgid "New Todo"
+msgstr "Новая задача"
+
+#: todo/templates/todo/createtodo.html:19 todo/templates/todo/viewtodo.html:19
+msgid "Title"
+msgstr "Название"
+
+#: todo/templates/todo/createtodo.html:28 todo/templates/todo/viewtodo.html:23
+msgid "Description"
+msgstr "Описание"
+
+#: todo/templates/todo/createtodo.html:30 todo/templates/todo/viewtodo.html:30
+msgid "Save"
+msgstr "Сохранить"
+
+#: todo/templates/todo/currenttodos.html:27
+msgid "It looks like you don't have any tasks."
+msgstr "Похоже, что у вас нет ни одной задачи."
+
+#: todo/templates/todo/home.html:13
+msgid "What may be done at any time will be done at no time."
+msgstr ""
+"Не откладывай что-то, что должен сделать, на другой день, иначе так его и не "
+"сделаешь."
+
+#: todo/templates/todo/home.html:14
+msgid "Start"
+msgstr "Начать"
+
+#: todo/templates/todo/loginuser.html:19 todo/templates/todo/signupuser.html:19
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: todo/templates/todo/loginuser.html:23 todo/templates/todo/signupuser.html:24
+msgid "Password"
+msgstr "Пароль"
+
+#: todo/templates/todo/loginuser.html:30
+msgid "Need an account?"
+msgstr "Нет аккаунта?"
+
+#: todo/templates/todo/loginuser.html:30
+msgid "Sign Up here"
+msgstr "Создайте его"
+
+#: todo/templates/todo/signupuser.html:6
+msgid "Sign Up noun"
+msgstr "Регистрация"
+
+#: todo/templates/todo/signupuser.html:21
+msgid "Username must be unique."
+msgstr "Имя пользователя должно быть уникальным."
+
+#: todo/templates/todo/signupuser.html:28
+msgid "Confirm Password"
+msgstr "Подтвердите пароль"
+
+#: todo/templates/todo/signupuser.html:35
+msgid "Do you already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: todo/templates/todo/signupuser.html:35
+msgid "Login here"
+msgstr "Войдите здесь"
+
+#: todo/templates/todo/viewtodo.html:28
+msgid "Important"
+msgstr "Важная задача"
+
+#: todo/templates/todo/viewtodo.html:31 todo/templates/todo/viewtodo.html:39
+msgid "Complete"
+msgstr "Завршить"
+
+#: todo/templates/todo/viewtodo.html:32 todo/templates/todo/viewtodo.html:44
+msgid "Delete"
+msgstr "Удалить"

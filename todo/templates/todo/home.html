@@ -1,5 +1,6 @@
 {% extends "todo/base.html" %}
 {% block content %}
+{% load i18n %}
 <br>
 <br>
 <br>
@@ -8,10 +9,9 @@
 <br>
 <div class="row justify-content-center mt-5">
     <div class="col-md-7 text-center">
-
         <h1>Melon Time</h1>
-        <p>Время имеет значение</p>
-        <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">Начать</a>
+        <p>{% trans "What may be done at any time will be done at no time." %}</p>
+        <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">{% trans "Start" %}</a>
     </div>
 </div>
 {% endblock %}
