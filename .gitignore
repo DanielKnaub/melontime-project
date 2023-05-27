@@ -3,6 +3,5 @@
 *.pyc
 __pycache__/
 /static/
-tokenkey.py
 *.sqlite3
 venv/
