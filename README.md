@@ -22,7 +22,7 @@ Web-приложение для планирования задач.
 Склонируйте репозиторий с помощью ```git clone https://github.com/DanielKnaub/melontime-project.git```
 Создайте виртуальное окружение командой ```python3 -m venv venv``` и активируйте его ```source venv/bin/activate```.
 
-Установите необходимые зависимости ```pip install -r requirements.txt```, создайте файл .env и укажите в нём секретный ключ ```SECRET_KEY=YOUR_SECRET_KEY``` в директории melontime/, проведите миграцию в базу данных ```python3 manage.py migrate```
+Установите необходимые зависимости ```pip install -r requirements.txt```, создайте файл .env  в директории melontime/ и укажите в нём секретный ключ ```SECRET_KEY=YOUR_SECRET_KEY```, проведите миграцию в базу данных ```python3 manage.py migrate```
 и запустите из корневой директории локальный сервер ```python3 manage.py runserver```.
 
 ## Перспективы развития
