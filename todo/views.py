@@ -63,6 +63,10 @@ def createtodo(request):
 @login_required
 def currenttodos(request):
     todos = Todo.objects.filter(user=request.user, datecompleted__isnull=True).order_by('-datecompleted')
+    for todo in todos:
+        if timezone.datetime.date(timezone.now()) > todo.due_date:
+            todo.datecompleted = todo.due_date
+            todo.save()
     return render(request, 'todo/currenttodos.html',{'todos':todos})
 
 
