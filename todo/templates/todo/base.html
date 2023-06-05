@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-warning">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">
+            <a class="navbar-brand" href="{% if user.is_authenticated %} {% url 'currenttodos' %} {% else %} {% url 'home' %} {% endif %}">
                 <img src="{% static 'todo/melon_logo.png' %}" width="30" height="30" class="d-inline-block align-top">
                 <span>Melon Time</span>
             </a>
