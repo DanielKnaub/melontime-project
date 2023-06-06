@@ -67,6 +67,7 @@ def currenttodos(request):
         if timezone.datetime.date(timezone.now()) > todo.due_date:
             todo.datecompleted = todo.due_date
             todo.save()
+    todos = Todo.objects.filter(user=request.user, datecompleted__isnull=True).order_by('-datecompleted')
     return render(request, 'todo/currenttodos.html',{'todos':todos})
 
 
