@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-05 17:45+0800\n"
+"POT-Creation-Date: 2023-06-11 21:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,33 +28,18 @@ msgstr "Русский"
 msgid "English"
 msgstr "English"
 
-#: todo/templates/todo/base.html:31 todo/templates/todo/currenttodos.html:14
-msgid "Current Todos"
-msgstr "Текущие задачи"
-
-#: todo/templates/todo/base.html:34 todo/templates/todo/completedtodos.html:6
+#: todo/templates/todo/completedtodos.html:4
+#: todo/templates/todo/navigation.html:22
 msgid "Completed Todos"
 msgstr "Завершённые задачи"
-
-#: todo/templates/todo/base.html:37 todo/templates/todo/createtodo.html:6
-msgid "Create Todo"
-msgstr "Создать задачу"
-
-#: todo/templates/todo/base.html:64 todo/templates/todo/base.html:67
-msgid "Logout"
-msgstr "Выйти"
-
-#: todo/templates/todo/base.html:72 todo/templates/todo/signupuser.html:31
-msgid "Sign Up"
-msgstr "Регистрация"
-
-#: todo/templates/todo/base.html:75 todo/templates/todo/loginuser.html:6
-msgid "Login"
-msgstr "Вход"
 
 #: todo/templates/todo/completedtodos.html:14
 msgid "Completed"
 msgstr "Завершена"
+
+#: todo/templates/todo/createtodo.html:6 todo/templates/todo/navigation.html:25
+msgid "Create Todo"
+msgstr "Создать задачу"
 
 #: todo/templates/todo/createtodo.html:19 todo/templates/todo/viewtodo.html:19
 msgid "Title"
@@ -76,59 +61,82 @@ msgstr "Срок выполнения"
 msgid "Save"
 msgstr "Сохранить"
 
-#: todo/templates/todo/currenttodos.html:28
+#: todo/templates/todo/currenttodos.html:13
+#: todo/templates/todo/navigation.html:19
+msgid "Current Todos"
+msgstr "Текущие задачи"
+
+#: todo/templates/todo/currenttodos.html:31
 msgid "It looks like you don't have any tasks."
 msgstr "Похоже, что у вас нет ни одной задачи."
 
-#: todo/templates/todo/currenttodos.html:30
+#: todo/templates/todo/currenttodos.html:34
 msgid "New Todo"
 msgstr "Новая задача"
 
-#: todo/templates/todo/home.html:13
+#: todo/templates/todo/home.html:11
 msgid "What may be done at any time will be done at no time."
-msgstr "Не откладывай что-то, что должен сделать, на другой день, иначе так его и не сделаешь."
+msgstr ""
+"Не откладывай что-то, что должен сделать, на другой день, иначе так его и не "
+"сделаешь."
 
-#: todo/templates/todo/home.html:14
+#: todo/templates/todo/home.html:16
 msgid "Start"
 msgstr "Начать"
 
-#: todo/templates/todo/loginuser.html:19 todo/templates/todo/signupuser.html:19
+#: todo/templates/todo/loginuser.html:4
+msgid "Login"
+msgstr "Вход"
+
+#: todo/templates/todo/loginuser.html:15 todo/templates/todo/signupuser.html:15
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: todo/templates/todo/loginuser.html:23 todo/templates/todo/signupuser.html:24
+#: todo/templates/todo/loginuser.html:19 todo/templates/todo/signupuser.html:28
 msgid "Password"
 msgstr "Пароль"
 
-#: todo/templates/todo/loginuser.html:26
+#: todo/templates/todo/loginuser.html:28 todo/templates/todo/navigation.html:47
 msgid "Log in"
 msgstr "Войти"
 
-#: todo/templates/todo/loginuser.html:30
+#: todo/templates/todo/loginuser.html:33
 msgid "Need an account?"
 msgstr "Нет аккаунта?"
 
-#: todo/templates/todo/loginuser.html:30
+#: todo/templates/todo/loginuser.html:34
 msgid "Sign Up here"
 msgstr "Создайте его"
 
-#: todo/templates/todo/signupuser.html:6
+#: todo/templates/todo/navigation.html:36
+#: todo/templates/todo/navigation.html:39
+#, fuzzy
+#| msgid "Log in"
+msgid "Log out"
+msgstr "Войти"
+
+#: todo/templates/todo/navigation.html:44
+#: todo/templates/todo/signupuser.html:48
+msgid "Sign Up"
+msgstr "Регистрация"
+
+#: todo/templates/todo/signupuser.html:4
 msgid "Signup"
 msgstr "Регистрация"
 
-#: todo/templates/todo/signupuser.html:21
+#: todo/templates/todo/signupuser.html:24
 msgid "Username must be unique."
 msgstr "Имя пользователя должно быть уникальным."
 
-#: todo/templates/todo/signupuser.html:28
+#: todo/templates/todo/signupuser.html:38
 msgid "Confirm Password"
 msgstr "Подтвердите пароль"
 
-#: todo/templates/todo/signupuser.html:35
+#: todo/templates/todo/signupuser.html:53
 msgid "Do you already have an account?"
 msgstr "Уже есть аккаунт?"
 
-#: todo/templates/todo/signupuser.html:35
+#: todo/templates/todo/signupuser.html:54
 msgid "Log in here"
 msgstr "Войдите здесь"
 
@@ -143,3 +151,22 @@ msgstr "Завершить"
 #: todo/templates/todo/viewtodo.html:36 todo/templates/todo/viewtodo.html:48
 msgid "Delete"
 msgstr "Удалить"
+
+#: todo/views.py:27
+msgid "This username is already in use. Please choose another one"
+msgstr "Это имя пользователя уже используется"
+
+#: todo/views.py:29
+msgid "Passwords are a mismatch"
+msgstr "Пароли не совпадают"
+
+#: todo/views.py:37
+msgid "Username and password don't match"
+msgstr "Имя пользователя и пароль не совпадают"
+
+#: todo/views.py:61
+msgid "Incorrect data has been entered "
+msgstr "Введены некорректные данные"
+
+#~ msgid "Logout"
+#~ msgstr "Выйти"

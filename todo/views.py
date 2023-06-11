@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from django.utils import timezone
+from django.utils.translation import gettext as _
 from django.contrib.auth.decorators import login_required
 from .forms import TodoForm
 from .models import Todo
@@ -23,9 +24,9 @@ def signupuser(request):
                 login(request, user)
                 return redirect('currenttodos')
             except IntegrityError:
-                return render(request, 'todo/signupuser.html', {'form':UserCreationForm, 'error':'Это имя пользователя уже используется'})
+                return render(request, 'todo/signupuser.html', {'form':UserCreationForm, 'error':_('This username is already in use. Please choose another one')})
         else:
-            return render(request, 'todo/signupuser.html', {'form':UserCreationForm, 'error':'Пароли не совпадают'})
+            return render(request, 'todo/signupuser.html', {'form':UserCreationForm, 'error':_('Passwords are a mismatch')})
 
 def loginuser(request):
     if request.method == 'GET':
@@ -33,7 +34,7 @@ def loginuser(request):
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
-            return render(request, 'todo/loginuser.html', {'form':AuthenticationForm,'error':'Имя пользователя и пароль не совпадают.'})
+            return render(request, 'todo/loginuser.html', {'form':AuthenticationForm,'error':_("Username and password don't match")})
         else:
             login(request, user)
             return redirect('currenttodos')
@@ -57,7 +58,7 @@ def createtodo(request):
             newtodo.save()
             return redirect('currenttodos')
         except ValueError:
-                return render(request, 'todo/createtodo.html', {'form':TodoForm, 'error':'Введены некорректные данные'})
+                return render(request, 'todo/createtodo.html', {'form':TodoForm, 'error':_('Incorrect data has been entered ')})
 
 
 @login_required
@@ -89,7 +90,7 @@ def viewtodo(request, todo_pk):
             form.save()
             return redirect('currenttodos')
         except ValueError:
-            return render(request, 'todo/viewtodo.html',{'todo':todo, 'form':form, 'error':'Введены некорректные данные'})
+            return render(request, 'todo/viewtodo.html',{'todo':todo, 'form':form, 'error':('Incorrect data has been entered ')})
 
 
 @login_required
