@@ -25,6 +25,8 @@ def signupuser(request):
                 return redirect('currenttodos')
             except IntegrityError:
                 return render(request, 'todo/signupuser.html', {'form':UserCreationForm, 'error':_('This username is already in use. Please choose another one')})
+            except ValueError:
+                return render(request, 'todo/signupuser.html', {'form':UserCreationForm, 'error':_('Incorrect data has been entered ')})
         else:
             return render(request, 'todo/signupuser.html', {'form':UserCreationForm, 'error':_('Passwords are a mismatch')})
 
