@@ -29,11 +29,11 @@
             </div>
             <div class="mb-3">
                 <label for="due_date" class="form-label">{% trans "Due date" %}</label>
-                <input type="datetime-local" name="due_date" class="form-control" id="due_date" value="{{ todo.due_date }}">
+                <input type="datetime-local" name="due_date" class="form-control" id="due_date" value="{{ todo.due_date|date:'Y-m-d h:i:s' }}">
             </div>
             <div class="mb-3">
                 <label for="notify_date" class="form-label">{% trans "Notify date" %}</label>
-                <input type="datetime-local" name="notify_date" class="form-control" id="notify_date" value="{{ todo.notify_date }}">
+                <input type="datetime-local" name="notify_date" class="form-control" id="notify_date" value="{{ todo.notify_date|date:'Y-m-d h:i:s' }}">
             </div>
             <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
         </form>
