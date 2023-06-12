@@ -56,6 +56,17 @@ def createtodo(request):
         try:
             form = TodoForm(request.POST)
             newtodo = form.save(commit=False)
+            if newtodo.due_date and newtodo.due_date < timezone.now():
+                raise ValueError
+            if newtodo.notify_date and newtodo.due_date:
+                if newtodo.notify_date < timezone.now():
+                    raise ValueError
+                else:
+                    during_time = newtodo.notify_date - timezone.now()
+                    during_time = int(during_time.total_seconds() * 1000)
+                    request.session["title"] = _("The due date is close at hand!")
+                    request.session["body"] = _("Todo ") + newtodo.title + _(" is about to expire!")
+                    request.session["during_time"] = during_time
             newtodo.user = request.user
             newtodo.save()
             return redirect('currenttodos')
@@ -67,11 +78,16 @@ def createtodo(request):
 def currenttodos(request):
     todos = Todo.objects.filter(user=request.user, datecompleted__isnull=True).order_by('-datecompleted')
     for todo in todos:
-        if timezone.datetime.date(timezone.now()) > todo.due_date:
+        if todo.due_date and timezone.now() > todo.due_date:
             todo.datecompleted = todo.due_date
             todo.save()
     todos = Todo.objects.filter(user=request.user, datecompleted__isnull=True).order_by('-datecompleted')
-    return render(request, 'todo/currenttodos.html',{'todos':todos})
+    if 'during_time' in request.session:
+        during_time = request.session['during_time']
+        del request.session['during_time']
+    else:
+        during_time = 0
+    return render(request, 'todo/currenttodos.html',{'todos':todos, "during_time": during_time})
 
 
 @login_required
@@ -88,7 +104,7 @@ def viewtodo(request, todo_pk):
         return render(request, 'todo/viewtodo.html',{'todo':todo, 'form':form})
     else:
         try:
-            form = TodoForm(request.POST, instance=todo)
+            form = TodoForm(request.POST, instance=todo)    
             form.save()
             return redirect('currenttodos')
         except ValueError:

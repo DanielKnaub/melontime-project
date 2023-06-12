@@ -9,7 +9,8 @@ class Todo(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     datecompleted = models.DateTimeField(null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    due_date = models.DateField(null=True, blank=False)
+    due_date = models.DateTimeField(null=True, blank=True)
+    notify_date = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.title

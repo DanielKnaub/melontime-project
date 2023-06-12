@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-11 21:38+0800\n"
+"POT-Creation-Date: 2023-06-13 00:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,11 @@ msgstr "Важная задача"
 msgid "Due date"
 msgstr "Срок выполнения"
 
-#: todo/templates/todo/createtodo.html:34 todo/templates/todo/viewtodo.html:34
+#: todo/templates/todo/createtodo.html:35 todo/templates/todo/viewtodo.html:35
+msgid "Notify date"
+msgstr "Дата уведомления"
+
+#: todo/templates/todo/createtodo.html:38 todo/templates/todo/viewtodo.html:38
 msgid "Save"
 msgstr "Сохранить"
 
@@ -144,11 +148,11 @@ msgstr "Войдите здесь"
 msgid "View Todo"
 msgstr "Просмотр задачи"
 
-#: todo/templates/todo/viewtodo.html:35 todo/templates/todo/viewtodo.html:43
+#: todo/templates/todo/viewtodo.html:39 todo/templates/todo/viewtodo.html:47
 msgid "Complete"
 msgstr "Завершить"
 
-#: todo/templates/todo/viewtodo.html:36 todo/templates/todo/viewtodo.html:48
+#: todo/templates/todo/viewtodo.html:40 todo/templates/todo/viewtodo.html:52
 msgid "Delete"
 msgstr "Удалить"
 
@@ -156,17 +160,30 @@ msgstr "Удалить"
 msgid "This username is already in use. Please choose another one"
 msgstr "Это имя пользователя уже используется"
 
-#: todo/views.py:29
+#: todo/views.py:29 todo/views.py:74
+msgid "Incorrect data has been entered "
+msgstr "Введены некорректные данные"
+
+#: todo/views.py:31
 msgid "Passwords are a mismatch"
 msgstr "Пароли не совпадают"
 
-#: todo/views.py:37
+#: todo/views.py:39
 msgid "Username and password don't match"
 msgstr "Имя пользователя и пароль не совпадают"
 
-#: todo/views.py:61
-msgid "Incorrect data has been entered "
-msgstr "Введены некорректные данные"
+#: todo/views.py:67
+msgid "The due date is close at hand!"
+msgstr "Срок выполнения задачи подходит к концу! "
+
+#: todo/views.py:68
+#, fuzzy
+msgid "Todo "
+msgstr "Задача "
+
+#: todo/views.py:68
+msgid " is about to expire!"
+msgstr " скоро истечёт!"
 
 #~ msgid "Logout"
 #~ msgstr "Выйти"
