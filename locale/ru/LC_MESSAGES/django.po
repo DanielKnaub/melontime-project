@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 00:02+0800\n"
+"POT-Creation-Date: 2023-06-13 16:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,9 +80,7 @@ msgstr "Новая задача"
 
 #: todo/templates/todo/home.html:11
 msgid "What may be done at any time will be done at no time."
-msgstr ""
-"Не откладывай что-то, что должен сделать, на другой день, иначе так его и не "
-"сделаешь."
+msgstr "Не откладывай что-то, что должен сделать, на другой день, иначе так его и не сделаешь."
 
 #: todo/templates/todo/home.html:16
 msgid "Start"
@@ -114,15 +112,13 @@ msgstr "Создайте его"
 
 #: todo/templates/todo/navigation.html:36
 #: todo/templates/todo/navigation.html:39
-#, fuzzy
-#| msgid "Log in"
 msgid "Log out"
-msgstr "Войти"
+msgstr "Выйти"
 
 #: todo/templates/todo/navigation.html:44
 #: todo/templates/todo/signupuser.html:48
 msgid "Sign Up"
-msgstr "Регистрация"
+msgstr "Зарегистрироваться"
 
 #: todo/templates/todo/signupuser.html:4
 msgid "Signup"
@@ -174,16 +170,12 @@ msgstr "Имя пользователя и пароль не совпадают"
 
 #: todo/views.py:67
 msgid "The due date is close at hand!"
-msgstr "Срок выполнения задачи подходит к концу! "
+msgstr "Срок выполнения задачи подходит к концу!"
 
 #: todo/views.py:68
-#, fuzzy
 msgid "Todo "
 msgstr "Задача "
 
 #: todo/views.py:68
 msgid " is about to expire!"
 msgstr " скоро истечёт!"
-
-#~ msgid "Logout"
-#~ msgstr "Выйти"
