@@ -65,7 +65,7 @@ def createtodo(request):
                     during_time = newtodo.notify_date - timezone.now()
                     during_time = int(during_time.total_seconds() * 1000)
                     request.session["title"] = _("The due date is close at hand!")
-                    request.session["body"] = _("Todo ") + newtodo.title + _(" is about to expire!")
+                    request.session["body"] = _("Todo ") + '"' + newtodo.title + '"' + _(" is about to expire!")
                     request.session["during_time"] = during_time
             newtodo.user = request.user
             newtodo.save()
