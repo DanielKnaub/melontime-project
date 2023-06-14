@@ -1,6 +1,6 @@
 # MelonTime
 
-[Демо](https://knaubdev.pythonanywhere.com/)
+[Демо](https://knaubdev.pythonanywhere.com/) [Демо 2](https://daniilknaub.fvds.ru)
 
 ## Описание
 
