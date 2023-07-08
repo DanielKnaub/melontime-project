@@ -104,11 +104,26 @@ def viewtodo(request, todo_pk):
         return render(request, 'todo/viewtodo.html',{'todo':todo, 'form':form})
     else:
         try:
-            form = TodoForm(request.POST, instance=todo)    
-            form.save()
-            return redirect('currenttodos')
+            form = TodoForm(request.POST, instance=todo)
+            if form.is_valid():
+                notify_date = form.cleaned_data["notify_date"]
+                due_date = form.cleaned_data["due_date"]
+                title = form.cleaned_data["title"]
+                if due_date and due_date < timezone.now():
+                    raise ValueError
+                if notify_date and due_date:
+                    if notify_date < timezone.now():
+                        raise ValueError
+                    else:
+                        during_time = notify_date - timezone.now()
+                        during_time = int(during_time.total_seconds() * 1000)
+                        request.session["title"] = _("The due date is close at hand!")
+                        request.session["body"] = _("Todo ") + '"' + title + '"' + _(" is about to expire!")
+                        request.session["during_time"] = during_time   
+                form.save()
+                return redirect('currenttodos')
         except ValueError:
-            return render(request, 'todo/viewtodo.html',{'todo':todo, 'form':form, 'error':('Incorrect data has been entered ')})
+            return render(request, 'todo/viewtodo.html',{'todo':todo, 'form':form, 'error':_('Incorrect data has been entered ')})
 
 
 @login_required
