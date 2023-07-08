@@ -2,7 +2,6 @@ from django import template
 
 register = template.Library()
 
-# Расскажем django о нашем крутом фильтре
 @register.filter
 def rupluralize(value, arg="задач,задача,задачи"):
     args = arg.split(",")
